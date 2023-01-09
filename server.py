@@ -20,8 +20,7 @@ def main():
     # Start the server
     ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
     ssl_context.load_cert_chain("cert.pem", "cert.pem")
-    start_server = websockets.serve(handle_request, HOST, PORT, max_size=9000000, ssl=ssl_context)
-    # start_server = websockets.serve(handle_request, HOST, PORT)
+    start_server = websockets.serve(handle_request, HOST, PORT, ssl=ssl_context)
     asyncio.get_event_loop().run_until_complete(start_server)
     asyncio.get_event_loop().run_forever()
 
