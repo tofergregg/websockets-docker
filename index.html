@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Python via Docker</title> 
+        <meta charset="utf-8">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Raleway">
+        <link rel="stylesheet" href="css/site.css">
+    </head>
+    <body onload="init_main()">
+        <div class="main">
+            <p>
+            <div id="editor" class="editor-div">
+            </div>
+            <p>
+<button type="button" id="click-button" onclick="get_input()">Run</button>
+<button type="button" id="click-button" onclick="window.interruptExecution()" style="margin-left: 10px">Stop</button>
+<button type="button" id="click-button" onclick="reset_console()" style="margin-left: 10px; margin-right: 10px">Reset</button>
+Examples:
+<select name="examples" id="examples" onchange="update_terminal()">
+  <option value="0">Loop input example</option>
+  <option value="1">Hello World</option>
+  <option value="2">User input</option>
+  <option value="3">Triangle</option>
+  <option value="4">time.sleep() example</option>
+  <option value="5">Error output example</option>
+  <option value="6">Connect-Four</option>
+  <option value="7">No-graphics Yahtzee</option>
+</select>
+<p>
+            <textarea id='console-output' rows="15" cols="40" spellcheck="false">
+</textarea>
+        </div>
+        <script src="js/editor.bundle.js"></script>  
+        <!--<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>-->
+        <script type="module" src="js/site.js"></script>
+    </body>
+</html>
